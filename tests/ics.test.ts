@@ -34,6 +34,10 @@ test('generated feed passes structural and semantic validation', () => {
   assert.ok(ics.includes('SUMMARY:世界读书日'));
   assert.ok(ics.includes('SUMMARY:世界地球日'));
   assert.ok(ics.includes('SUMMARY:程序员节'));
+  assert.ok(ics.includes('SUMMARY:中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日'));
+  assert.ok(ics.includes('SUMMARY:九一八事变纪念日'));
+  assert.ok(ics.includes('SUMMARY:世界海洋日'));
+  assert.ok(ics.includes('SUMMARY:中国共产党成立纪念日'));
   assert.ok(!ics.includes('SUMMARY:五四青年节'));
   assert.ok(!ics.includes('SUMMARY:中国青年节'));
   assert.ok(ics.includes('SUMMARY:植树节'));
