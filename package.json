@@ -1,0 +1,25 @@
+{
+  "name": "cn-holiday-calendar",
+  "version": "0.2.0",
+  "private": false,
+  "description": "A maintainable iCalendar subscription for Chinese traditional festivals and selected international observances.",
+  "type": "module",
+  "scripts": {
+    "generate": "tsx src/cli.ts",
+    "validate": "tsx src/validate-cli.ts",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test && npm run generate && npm run validate"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "lunar-javascript": "^1.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
