@@ -71,7 +71,7 @@ test('catalogue uses corrected names and includes the two requested observances 
   assert.equal(byId.get('world-book-day')?.name, '世界图书与版权日（世界读书日）');
   assert.equal(byId.get('earth-day')?.name, '国际地球母亲日（世界地球日）');
   assert.equal(byId.get('nurses-day')?.name, '国际护士节');
-  assert.equal(byId.get('youth-day-cn')?.name, '中国青年节（五四青年节）');
+  assert.equal(byId.get('youth-day-cn')?.name, '五四青年节（中国青年节）');
   assert.equal(byId.has('pi-day'), false);
   assert.equal(byId.has('programmers-day'), true);
 });
