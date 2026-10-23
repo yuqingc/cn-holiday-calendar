@@ -31,7 +31,6 @@ export const holidays: Holiday[] = [
   { id: 'national-memorial-day', name: '南京大屠杀死难者国家公祭日', category: 'china', rule: { type: 'fixed', month: 12, day: 13 }, enabled: true },
   { id: 'victory-of-resistance-war-day', name: '中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日', category: 'china', rule: { type: 'fixed', month: 9, day: 3 }, description: '每年9月3日，纪念中国人民抗日战争胜利及世界反法西斯战争胜利', enabled: true },
   { id: 'september-18-incident-day', name: '九一八事变纪念日', category: 'china', rule: { type: 'fixed', month: 9, day: 18 }, description: '每年9月18日，纪念九一八事变', enabled: true },
-  { id: 'cpc-founding-anniversary', name: '中国共产党成立纪念日', category: 'china', rule: { type: 'fixed', month: 7, day: 1 }, description: '每年7月1日，常称“七一”', enabled: true },
   { id: 'xinhai-revolution-day', name: '辛亥革命纪念日／中华民国国庆日（双十节）', category: 'china', rule: { type: 'fixed', month: 10, day: 10 }, description: '同为公历10月10日；本条并列不同历史与政治语境下使用的纪念名称', enabled: true },
 
   { id: 'world-book-day', name: '世界读书日', category: 'international', rule: { type: 'fixed', month: 4, day: 23 }, description: '联合国教科文组织设立的世界图书与版权日，中文常称世界读书日', enabled: true },
