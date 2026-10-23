@@ -8,7 +8,7 @@ A TypeScript project that generates a read-only iCalendar subscription for Chine
 - Popular observances: 情人节、白色情人节、母亲节、父亲节、感恩节（美国）、万圣夜、平安夜、圣诞节、愚人节
 - Chinese dates: 教师节（中国）、中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日、九一八事变纪念日、南京大屠杀死难者国家公祭日、辛亥革命纪念日／中华民国国庆日（双十节）、植树节
 - International and professional observances: 国际护士节、世界读书日、世界环境日、世界海洋日、世界地球日、世界无烟日、国际消费者权益日（3·15）
-- Chinese tech-culture observance: 程序员节（中国，10月24日）
+- Chinese tech-culture observance: 程序员节（中国），每年10月24日
 
 ## Design
 
