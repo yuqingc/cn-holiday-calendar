@@ -27,7 +27,7 @@ export const holidays: Holiday[] = [
   { id: 'april-fools-day', name: '愚人节', category: 'western', rule: { type: 'fixed', month: 4, day: 1 }, enabled: true },
 
   { id: 'teachers-day-cn', name: '教师节（中国）', category: 'china', rule: { type: 'fixed', month: 9, day: 10 }, description: '中国教师节，定于每年9月10日；与10月5日的世界教师日不同', enabled: true },
-  { id: 'youth-day-cn', name: '中国青年节（五四青年节）', category: 'china', rule: { type: 'fixed', month: 5, day: 4 }, enabled: true },
+  { id: 'youth-day-cn', name: '五四青年节（中国青年节）', category: 'china', rule: { type: 'fixed', month: 5, day: 4 }, enabled: true },
   { id: 'nurses-day', name: '国际护士节', category: 'international', rule: { type: 'fixed', month: 5, day: 12 }, description: '每年5月12日', enabled: true },
   { id: 'national-memorial-day', name: '南京大屠杀死难者国家公祭日', category: 'china', rule: { type: 'fixed', month: 12, day: 13 }, enabled: true },
   { id: 'xinhai-revolution-day', name: '辛亥革命纪念日／中华民国国庆日（双十节）', category: 'china', rule: { type: 'fixed', month: 10, day: 10 }, description: '同为公历10月10日；本条并列不同历史与政治语境下使用的纪念名称', enabled: true },
