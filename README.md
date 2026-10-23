@@ -46,5 +46,4 @@ In Apple Calendar, choose **Add Calendar → Add Subscription Calendar** and pas
 - 感恩节 refers specifically to the United States date rule (fourth Thursday in November).
 - 母亲节 and 父亲节 use the commonly used second-Sunday-in-May and third-Sunday-in-June rules.
 - 程序员节（中国）固定为10月24日，名称中的“1024”指向计算机领域常见的数字，属于行业文化节日而非法定假日。
-- The catalogue excludes 五四青年节 and π 日 per project preferences.
 - This supplementary calendar is not an official Chinese statutory-holiday or make-up-workday feed.
