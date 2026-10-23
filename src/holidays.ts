@@ -17,7 +17,7 @@ export const holidays: Holiday[] = [
   { id: 'ghost-festival', name: '中元节', category: 'traditional', rule: { type: 'lunar', month: 7, day: 15 }, description: '农历七月十五；各地也有不同的祭祖与民俗日期传统', enabled: true },
 
   { id: 'valentines-day', name: '情人节', category: 'western', rule: { type: 'fixed', month: 2, day: 14 }, enabled: true },
-  { id: 'white-day', name: '白色情人节', category: 'western', rule: { type: 'fixed', month: 3, day: 14 }, enabled: true },
+  { id: 'white-day', name: '白色情人节', category: 'western', rule: { type: 'fixed', month: 3, day: 14 }, description: '在日本等地流行的节日，通常于3月14日回赠情人节收到的礼物', enabled: true },
   { id: 'mothers-day', name: '母亲节', category: 'western', rule: { type: 'nth-weekday', month: 5, weekday: 0, nth: 2 }, description: '本日历采用通行的五月第二个星期日日期规则', enabled: true },
   { id: 'fathers-day', name: '父亲节', category: 'western', rule: { type: 'nth-weekday', month: 6, weekday: 0, nth: 3 }, description: '本日历采用通行的六月第三个星期日日期规则', enabled: true },
   { id: 'thanksgiving-us', name: '感恩节（美国）', category: 'western', region: 'US', rule: { type: 'nth-weekday', month: 11, weekday: 4, nth: 4 }, description: '美国感恩节：每年十一月第四个星期四；其他地区日期可能不同', enabled: true },
@@ -34,11 +34,11 @@ export const holidays: Holiday[] = [
   { id: 'xinhai-revolution-day', name: '辛亥革命纪念日／中华民国国庆日（双十节）', category: 'china', rule: { type: 'fixed', month: 10, day: 10 }, description: '同为公历10月10日；本条并列不同历史与政治语境下使用的纪念名称', enabled: true },
 
   { id: 'world-book-day', name: '世界读书日', category: 'international', rule: { type: 'fixed', month: 4, day: 23 }, description: '联合国教科文组织设立的世界图书与版权日，中文常称世界读书日', enabled: true },
-  { id: 'world-environment-day', name: '世界环境日', category: 'international', rule: { type: 'fixed', month: 6, day: 5 }, enabled: true },
+  { id: 'world-environment-day', name: '世界环境日', category: 'international', rule: { type: 'fixed', month: 6, day: 5 }, description: '联合国推动的全球环境保护纪念日，旨在提高公众环保意识', enabled: true },
   { id: 'world-oceans-day', name: '世界海洋日', category: 'international', rule: { type: 'fixed', month: 6, day: 8 }, description: '联合国设立的国际纪念日，每年6月8日', enabled: true },
   { id: 'earth-day', name: '世界地球日', category: 'international', rule: { type: 'fixed', month: 4, day: 22 }, description: '联合国将4月22日定为国际地球母亲日，中文常称世界地球日', enabled: true },
-  { id: 'world-no-tobacco-day', name: '世界无烟日', category: 'international', rule: { type: 'fixed', month: 5, day: 31 }, enabled: true },
-  { id: 'programmers-day-cn-1024', name: '1024程序员节（中国）', category: 'technology', rule: { type: 'fixed', month: 10, day: 24 }, description: '中国互联网行业流行的程序员纪念日；1024 = 2¹⁰，是计算机领域常见的数字，并非法定假日', enabled: true },
+  { id: 'world-no-tobacco-day', name: '世界无烟日', category: 'international', rule: { type: 'fixed', month: 5, day: 31 }, description: '世界卫生组织设立的纪念日，旨在宣传烟草危害并倡导无烟环境', enabled: true },
+  { id: 'programmers-day-cn-1024', name: '程序员节（中国）', category: 'technology', rule: { type: 'fixed', month: 10, day: 24 }, description: '中国互联网行业流行的程序员纪念日；10月24日取数字1024之意，是计算机领域常见的数字，并非法定假日', enabled: true },
   { id: 'consumer-rights-day', name: '国际消费者权益日（3·15）', category: 'international', rule: { type: 'fixed', month: 3, day: 15 }, description: '每年3月15日；中国官方宣传常用“3·15国际消费者权益日”', enabled: true },
   { id: 'tree-planting-day-cn', name: '植树节', category: 'china', rule: { type: 'fixed', month: 3, day: 12 }, description: '中国植树节，依据《中华人民共和国森林法》定于每年3月12日', enabled: true },
 ];

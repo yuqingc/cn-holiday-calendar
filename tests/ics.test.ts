@@ -34,7 +34,11 @@ test('generated feed passes structural and semantic validation', () => {
   assert.ok(ics.includes('SUMMARY:世界读书日'));
   assert.ok(ics.includes('SUMMARY:世界地球日'));
   assert.ok(!ics.includes('SUMMARY:国际程序员节'));
-  assert.ok(ics.includes('SUMMARY:1024程序员节（中国）'));
+  assert.ok(ics.includes('SUMMARY:程序员节（中国）'));
+  assert.ok(!ics.includes('SUMMARY:1024程序员节（中国）'));
+  assert.ok(ics.replace(/\r\n[ \t]/g, '').includes('DESCRIPTION:在日本等地流行的节日，通常于3月14日回赠情人节收到的礼物'));
+  assert.ok(ics.replace(/\r\n[ \t]/g, '').includes('DESCRIPTION:联合国推动的全球环境保护纪念日，旨在提高公众环保意识'));
+  assert.ok(ics.replace(/\r\n[ \t]/g, '').includes('DESCRIPTION:世界卫生组织设立的纪念日，旨在宣传烟草危害并倡导无烟环境'));
   assert.ok(ics.includes('RRULE:FREQ=YEARLY;BYMONTH=10;BYMONTHDAY=24'));
   // RFC 5545 folds long content lines; unfold continuations before matching this long summary.
   assert.ok(ics.replace(/\r\n[ \t]/g, '').includes('SUMMARY:中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日'));

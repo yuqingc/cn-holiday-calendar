@@ -76,7 +76,10 @@ test('catalogue uses the requested holiday labels and excludes removed holidays'
   assert.equal(byId.get('halloween')?.name, '万圣夜');
   assert.equal(byId.get('christmas-eve')?.name, '平安夜');
   assert.equal(byId.has('programmers-day'), false);
-  assert.equal(byId.get('programmers-day-cn-1024')?.name, '1024程序员节（中国）');
+  assert.equal(byId.get('programmers-day-cn-1024')?.name, '程序员节（中国）');
+  assert.match(byId.get('white-day')?.description ?? '', /回赠情人节/);
+  assert.match(byId.get('world-environment-day')?.description ?? '', /环保意识/);
+  assert.match(byId.get('world-no-tobacco-day')?.description ?? '', /烟草危害/);
   assert.equal(byId.get('victory-of-resistance-war-day')?.name, '中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日');
   assert.equal(byId.get('september-18-incident-day')?.name, '九一八事变纪念日');
   assert.equal(byId.get('world-oceans-day')?.name, '世界海洋日');
@@ -89,7 +92,7 @@ test('new March observances resolve to their correct Gregorian dates', () => {
   assert.equal(iso(resolveRuleDate(treeDay.rule, 2027)), '2027-03-12');
 });
 
-test('1024 China Programmers Day falls on October 24 every year', () => {
+test('China Programmers Day falls on October 24 every year', () => {
   const holiday = holidays.find((item) => item.id === 'programmers-day-cn-1024')!;
   assert.equal(iso(resolveRuleDate(holiday.rule, 2027)), '2027-10-24');
 });
