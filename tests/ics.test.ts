@@ -27,7 +27,10 @@ test('generated feed passes structural and semantic validation', () => {
   assert.ok(ics.startsWith('BEGIN:VCALENDAR\r\n'));
   assert.ok(ics.endsWith('END:VCALENDAR\r\n'));
   assert.ok(ics.includes('RRULE:FREQ=YEARLY;BYMONTH=5;BYDAY=2SU'));
-  assert.ok(ics.includes('SUMMARY:龙抬头'));
+  assert.ok(ics.includes('SUMMARY:二月二·龙抬头'));
+  assert.ok(ics.includes('SUMMARY:国际消费者权益日（3·15）'));
+  assert.ok(ics.includes('SUMMARY:植树节'));
+  assert.ok(!ics.includes('SUMMARY:π 日'));
 });
 
 test('generation is deterministic when the timestamp is fixed', () => {
