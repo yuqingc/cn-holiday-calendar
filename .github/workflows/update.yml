@@ -2,10 +2,12 @@ name: Test and publish holiday calendar
 
 on:
   push:
-    branches: [main, 'implementation/**']
+    branches: [master, 'implementation/**', 'maintenance/**']
     paths:
       - 'src/**'
       - 'tests/**'
+      - 'README.md'
+      - 'LICENSE'
       - 'package.json'
       - 'package-lock.json'
       - 'tsconfig.json'
@@ -14,6 +16,8 @@ on:
     paths:
       - 'src/**'
       - 'tests/**'
+      - 'README.md'
+      - 'LICENSE'
       - 'package.json'
       - 'package-lock.json'
       - 'tsconfig.json'
@@ -60,7 +64,7 @@ jobs:
         if: matrix.node-version == 22 && github.event_name != 'pull_request'
         run: |
           git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.email '41898282+actions@users.noreply.github.com'
           git add package-lock.json dist/holidays.ics
           if ! git diff --cached --quiet; then
             git commit -m 'chore: regenerate holiday calendar'
