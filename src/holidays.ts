@@ -38,7 +38,6 @@ export const holidays: Holiday[] = [
   { id: 'world-oceans-day', name: '世界海洋日', category: 'international', rule: { type: 'fixed', month: 6, day: 8 }, description: '联合国设立的国际纪念日，每年6月8日', enabled: true },
   { id: 'earth-day', name: '世界地球日', category: 'international', rule: { type: 'fixed', month: 4, day: 22 }, description: '联合国将4月22日定为国际地球母亲日，中文常称世界地球日', enabled: true },
   { id: 'world-no-tobacco-day', name: '世界无烟日', category: 'international', rule: { type: 'fixed', month: 5, day: 31 }, enabled: true },
-  { id: 'programmers-day', name: '国际程序员节', category: 'technology', rule: { type: 'ordinal-day', day: 256 }, description: '每年第256天：平年9月13日、闰年9月12日。俄罗斯于2009年正式确立；256 = 2⁸，一个字节可表示256种数值', enabled: true },
   { id: 'programmers-day-cn-1024', name: '1024程序员节（中国）', category: 'technology', rule: { type: 'fixed', month: 10, day: 24 }, description: '中国互联网行业流行的程序员纪念日；1024 = 2¹⁰，是计算机领域常见的数字，并非法定假日', enabled: true },
   { id: 'consumer-rights-day', name: '国际消费者权益日（3·15）', category: 'international', rule: { type: 'fixed', month: 3, day: 15 }, description: '每年3月15日；中国官方宣传常用“3·15国际消费者权益日”', enabled: true },
   { id: 'tree-planting-day-cn', name: '植树节', category: 'china', rule: { type: 'fixed', month: 3, day: 12 }, description: '中国植树节，依据《中华人民共和国森林法》定于每年3月12日', enabled: true },
