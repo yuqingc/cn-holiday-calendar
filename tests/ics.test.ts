@@ -29,6 +29,13 @@ test('generated feed passes structural and semantic validation', () => {
   assert.ok(ics.includes('RRULE:FREQ=YEARLY;BYMONTH=5;BYDAY=2SU'));
   assert.ok(ics.includes('SUMMARY:二月二·龙抬头'));
   assert.ok(ics.includes('SUMMARY:国际消费者权益日（3·15）'));
+  assert.ok(ics.includes('SUMMARY:万圣夜'));
+  assert.ok(ics.includes('SUMMARY:平安夜'));
+  assert.ok(ics.includes('SUMMARY:世界读书日'));
+  assert.ok(ics.includes('SUMMARY:世界地球日'));
+  assert.ok(ics.includes('SUMMARY:程序员节'));
+  assert.ok(!ics.includes('SUMMARY:五四青年节'));
+  assert.ok(!ics.includes('SUMMARY:中国青年节'));
   assert.ok(ics.includes('SUMMARY:植树节'));
   assert.ok(!ics.includes('SUMMARY:π 日'));
 });

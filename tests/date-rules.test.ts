@@ -56,7 +56,7 @@ test('lunar rules match known Chinese New Year and Laba dates', () => {
 });
 
 test('catalogue entries have unique IDs and resolution includes the requested Gregorian year range', () => {
-  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 27);
+  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 26);
   assert.equal(new Set(holidays.map((holiday) => holiday.id)).size, holidays.length);
   const resolved = resolveHolidays(holidays, 2026, 2046);
   assert.ok(resolved.length >= 140, 'Expected a 21-year calendar, got ' + resolved.length + ' events');
@@ -64,16 +64,18 @@ test('catalogue entries have unique IDs and resolution includes the requested Gr
 });
 
 
-test('catalogue uses corrected names and includes the two requested observances but not Pi Day', () => {
+test('catalogue uses the requested holiday labels and excludes removed holidays', () => {
   const byId = new Map(holidays.map((holiday) => [holiday.id, holiday]));
   assert.equal(byId.get('consumer-rights-day')?.name, '国际消费者权益日（3·15）');
   assert.equal(byId.get('tree-planting-day-cn')?.name, '植树节');
-  assert.equal(byId.get('world-book-day')?.name, '世界图书与版权日（世界读书日）');
-  assert.equal(byId.get('earth-day')?.name, '国际地球母亲日（世界地球日）');
+  assert.equal(byId.get('world-book-day')?.name, '世界读书日');
+  assert.equal(byId.get('earth-day')?.name, '世界地球日');
   assert.equal(byId.get('nurses-day')?.name, '国际护士节');
-  assert.equal(byId.get('youth-day-cn')?.name, '五四青年节（中国青年节）');
+  assert.equal(byId.has('youth-day-cn'), false);
   assert.equal(byId.has('pi-day'), false);
-  assert.equal(byId.has('programmers-day'), true);
+  assert.equal(byId.get('halloween')?.name, '万圣夜');
+  assert.equal(byId.get('christmas-eve')?.name, '平安夜');
+  assert.equal(byId.get('programmers-day')?.name, '程序员节');
 });
 
 test('new March observances resolve to their correct Gregorian dates', () => {
