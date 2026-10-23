@@ -33,7 +33,9 @@ test('generated feed passes structural and semantic validation', () => {
   assert.ok(ics.includes('SUMMARY:平安夜'));
   assert.ok(ics.includes('SUMMARY:世界读书日'));
   assert.ok(ics.includes('SUMMARY:世界地球日'));
-  assert.ok(ics.includes('SUMMARY:程序员节'));
+  assert.ok(ics.includes('SUMMARY:国际程序员节'));
+  assert.ok(ics.includes('SUMMARY:1024程序员节（中国）'));
+  assert.ok(ics.includes('RRULE:FREQ=YEARLY;BYMONTH=10;BYMONTHDAY=24'));
   // RFC 5545 folds long content lines; unfold continuations before matching this long summary.
   assert.ok(ics.replace(/\r\n[ \t]/g, '').includes('SUMMARY:中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日'));
   assert.ok(ics.includes('SUMMARY:九一八事变纪念日'));
