@@ -56,7 +56,7 @@ test('lunar rules match known Chinese New Year and Laba dates', () => {
 });
 
 test('catalogue entries have unique IDs and resolution includes the requested Gregorian year range', () => {
-  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 26);
+  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 30);
   assert.equal(new Set(holidays.map((holiday) => holiday.id)).size, holidays.length);
   const resolved = resolveHolidays(holidays, 2026, 2046);
   assert.ok(resolved.length >= 140, 'Expected a 21-year calendar, got ' + resolved.length + ' events');
@@ -76,6 +76,10 @@ test('catalogue uses the requested holiday labels and excludes removed holidays'
   assert.equal(byId.get('halloween')?.name, '万圣夜');
   assert.equal(byId.get('christmas-eve')?.name, '平安夜');
   assert.equal(byId.get('programmers-day')?.name, '程序员节');
+  assert.equal(byId.get('victory-of-resistance-war-day')?.name, '中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日');
+  assert.equal(byId.get('september-18-incident-day')?.name, '九一八事变纪念日');
+  assert.equal(byId.get('world-oceans-day')?.name, '世界海洋日');
+  assert.equal(byId.get('cpc-founding-anniversary')?.name, '中国共产党成立纪念日');
 });
 
 test('new March observances resolve to their correct Gregorian dates', () => {
@@ -83,4 +87,12 @@ test('new March observances resolve to their correct Gregorian dates', () => {
   const treeDay = holidays.find((holiday) => holiday.id === 'tree-planting-day-cn')!;
   assert.equal(iso(resolveRuleDate(consumerDay.rule, 2027)), '2027-03-15');
   assert.equal(iso(resolveRuleDate(treeDay.rule, 2027)), '2027-03-12');
+});
+
+test('new September, June and July observances resolve to their fixed Gregorian dates', () => {
+  const byId = new Map(holidays.map((holiday) => [holiday.id, holiday]));
+  assert.equal(iso(resolveRuleDate(byId.get('victory-of-resistance-war-day')!.rule, 2027)), '2027-09-03');
+  assert.equal(iso(resolveRuleDate(byId.get('september-18-incident-day')!.rule, 2027)), '2027-09-18');
+  assert.equal(iso(resolveRuleDate(byId.get('world-oceans-day')!.rule, 2027)), '2027-06-08');
+  assert.equal(iso(resolveRuleDate(byId.get('cpc-founding-anniversary')!.rule, 2027)), '2027-07-01');
 });
