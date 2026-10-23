@@ -27,7 +27,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: holiday-calendar-${ github.ref }
+  group: holiday-calendar-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
