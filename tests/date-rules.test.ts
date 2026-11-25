@@ -56,7 +56,7 @@ test('lunar rules match known Chinese New Year and Laba dates', () => {
 });
 
 test('catalogue entries have unique IDs and resolution includes the requested Gregorian year range', () => {
-  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 29);
+  assert.equal(holidays.filter((holiday) => holiday.enabled).length, 26);
   assert.equal(new Set(holidays.map((holiday) => holiday.id)).size, holidays.length);
   const resolved = resolveHolidays(holidays, 2026, 2046);
   assert.ok(resolved.length >= 140, 'Expected a 21-year calendar, got ' + resolved.length + ' events');
@@ -80,8 +80,6 @@ test('catalogue uses the requested holiday labels and excludes removed holidays'
   assert.match(byId.get('white-day')?.description ?? '', /回赠情人节/);
   assert.match(byId.get('world-environment-day')?.description ?? '', /环保意识/);
   assert.match(byId.get('world-no-tobacco-day')?.description ?? '', /烟草危害/);
-  assert.equal(byId.get('victory-of-resistance-war-day')?.name, '中国人民抗日战争胜利纪念日暨世界反法西斯战争胜利纪念日');
-  assert.equal(byId.get('september-18-incident-day')?.name, '九一八事变纪念日');
   assert.equal(byId.get('world-oceans-day')?.name, '世界海洋日');
 });
 
@@ -97,9 +95,10 @@ test('China Programmers Day falls on October 24 every year', () => {
   assert.equal(iso(resolveRuleDate(holiday.rule, 2027)), '2027-10-24');
 });
 
-test('new September and June observances resolve to their fixed Gregorian dates', () => {
+test('remaining June observance resolves to its fixed Gregorian date', () => {
   const byId = new Map(holidays.map((holiday) => [holiday.id, holiday]));
-  assert.equal(iso(resolveRuleDate(byId.get('victory-of-resistance-war-day')!.rule, 2027)), '2027-09-03');
-  assert.equal(iso(resolveRuleDate(byId.get('september-18-incident-day')!.rule, 2027)), '2027-09-18');
+  assert.equal(byId.has('victory-of-resistance-war-day'), false);
+  assert.equal(byId.has('september-18-incident-day'), false);
+  assert.equal(byId.has('national-memorial-day'), false);
   assert.equal(iso(resolveRuleDate(byId.get('world-oceans-day')!.rule, 2027)), '2027-06-08');
 });
